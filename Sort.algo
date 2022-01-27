@@ -1,0 +1,27 @@
+ALGORITHM tri
+VAR
+    t : ARRAY_OF INTEGER[];
+    n:INTEGER
+BEGIN
+    Write('donner la taille du tab')
+    read (n)
+    FOR i FROM 1 TO n STEP 1  DO
+        readt[i]
+    END_FOR
+    FOR i FROM 1 TO n-1 STEP 1  DO
+        posmin=i
+        FOR j FROM i+1 TO n STEP 1  DO
+            IF (t[j]<t[posmin]) THEN
+               posmin:=j
+            END_IF
+            IF (i<>posmin) THEN
+                aux:=t[i]
+                t[i]:=t[posmin]
+                t[posmin]:=aux
+            END_IF
+        END_FOR
+        FOR i FROM 1 TO n STEP 1  DO
+            Write(t[i])
+        END_FOR
+    END_FOR
+END
